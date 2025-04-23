@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../common/custom_container.dart';
+import '../../constants/constants.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -6,23 +10,12 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile'),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(color: Colors.black),
-        titleTextStyle: const TextStyle(
-          color: Colors.black,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
+      backgroundColor: kPrimary,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(130.h),
+        child: Container(height: 130),
       ),
-      body: Center(
-        child: const Text(
-          'Profile Page',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+      body: SafeArea(child: CustomContainer(containerContent: Container())),
     );
   }
 }

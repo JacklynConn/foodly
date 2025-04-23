@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodly/common/custom_container.dart';
+import 'package:foodly/constants/constants.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -6,23 +9,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(color: Colors.black),
-        titleTextStyle: const TextStyle(
-          color: Colors.black,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
+      backgroundColor: kPrimary,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(130.h),
+        child: Container(height: 130),
       ),
-      body: Center(
-        child: const Text(
-          'Home Page',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+      body: SafeArea(child: CustomContainer(containerContent: Container())),
     );
   }
 }
