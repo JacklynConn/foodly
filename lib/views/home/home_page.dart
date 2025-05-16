@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodly/common/custom_container.dart';
-import 'package:foodly/constants/constants.dart';
+import '/common/custom_app_bar.dart';
+import '/common/custom_container.dart';
+import '/constants/constants.dart';
+import 'widgets/category_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,9 +14,13 @@ class HomePage extends StatelessWidget {
       backgroundColor: kPrimary,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(130.h),
-        child: Container(height: 130),
+        child: CustomAppBar(),
       ),
-      body: SafeArea(child: CustomContainer(containerContent: Container())),
+      body: SafeArea(
+        child: CustomContainer(
+          containerContent: Column(children: [CategoryList()]),
+        ),
+      ),
     );
   }
 }
