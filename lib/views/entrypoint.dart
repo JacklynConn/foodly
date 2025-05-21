@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import '../constants/constants.dart';
 import 'package:get/get.dart';
 import '../controllers/tab_index_controller.dart';
@@ -29,7 +30,10 @@ class MainScreen extends StatelessWidget {
                   currentIndex: controller.tabIndex,
                   items: [
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.home),
+                      icon:
+                          controller.tabIndex == 0
+                              ? Icon(AntDesign.appstore1)
+                              : Icon(AntDesign.appstore_o),
                       label: 'Home',
                     ),
                     BottomNavigationBarItem(
@@ -37,11 +41,17 @@ class MainScreen extends StatelessWidget {
                       label: 'Search',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.shopping_cart),
+                      icon: Badge(
+                        label: Text('2'),
+                        child: Icon(FontAwesome.opencart),
+                      ),
                       label: 'Cart',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.person),
+                      icon:
+                          controller.tabIndex == 3
+                              ? Icon(FontAwesome.user_circle)
+                              : Icon(FontAwesome.user_circle_o),
                       label: 'Profile',
                     ),
                   ],

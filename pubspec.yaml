@@ -15,6 +15,7 @@ dependencies:
   flutter_screenutil: ^5.9.3 # For responsive design
   google_fonts: ^6.2.1 # For custom fonts
   get: ^4.7.2 # For state management
+  flutter_vector_icons: ^2.0.0 # For vector icons
 
 dev_dependencies:
   flutter_test:
