@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import '../views/profile/profile_page.dart';
+import '../views/search/search_page.dart';
 import '../constants/constants.dart';
 import 'package:get/get.dart';
 import '../controllers/tab_index_controller.dart';
+import 'cart/cart_page.dart';
+import 'home/home_page.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+  MainScreen({super.key});
+
+  final List<Widget> pageList = [
+    const HomePage(),
+    const SearchPage(),
+    const CartPage(),
+    const ProfilePage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +25,7 @@ class MainScreen extends StatelessWidget {
       return Scaffold(
         body: Stack(
           children: [
-            Container(height: height, width: width, color: kOffWhite),
+            pageList[controller.tabIndex],
             Align(
               alignment: Alignment.bottomCenter,
               child: Theme(
