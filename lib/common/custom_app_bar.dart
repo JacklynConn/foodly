@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodly/common/app_style.dart';
-import 'package:foodly/common/reusable_text.dart';
-import 'package:foodly/constants/constants.dart';
+import '../common/app_style.dart';
+import '../common/reusable_text.dart';
+import '../constants/constants.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -53,16 +53,27 @@ class CustomAppBar extends StatelessWidget {
               ],
             ),
             Text(
-              '❄️',
+              getTimeOfDay(),
               style: TextStyle(
-                fontSize: 11.sp,
-                color: kGrayLight,
-                fontWeight: FontWeight.w400,
+                fontSize: 25.sp,
               ),
             ),
           ],
         ),
       ),
     );
+  }
+
+  String getTimeOfDay(){
+    DateTime now = DateTime.now();
+    int hour = now.hour;
+
+    if (hour >= 0 && hour < 12) {
+      return ' ☀️ ';
+    } else if (hour >= 12 && hour < 16) {
+      return ' ⛅ ';
+    } else {
+      return ' 🌙 ';
+    }
   }
 }
