@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '/views/home/widgets/category_list_widget.dart';
+import 'widgets/category_list_widget.dart';
 import '/common/custom_app_bar.dart';
 import '/common/custom_container.dart';
 import '/constants/constants.dart';
