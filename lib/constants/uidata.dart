@@ -1,70 +1,100 @@
 List<dynamic> categories = [
-  {
-    "_id": "6537ece708ff5b7de97d0695",
-    "title": "Fried Rice",
-    "value": "fried_rice",
-    "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/4a4cd06e-94de-4478-8588-66eee01354d4-rice.png",
-    "createdAt": "2023-10-24T16:12:23.571Z",
-    "updatedAt": "2023-10-24T16:12:23.571Z",
-    "__v": 0
-  },
+  // {
+  //   "_id": "6537ece708ff5b7de97d0695",
+  //   "title": "Fried Rice",
+  //   "value": "fried_rice",
+  //   "imageUrl": "assets/foodly/curry.png",
+  //   "createdAt": "2023-10-24T16:12:23.571Z",
+  //   "updatedAt": "2023-10-24T16:12:23.571Z",
+  //   "__v": 0,
+  // },
   {
     "_id": "65310f3381e4d98d60b093c5",
     "title": "Curry",
     "value": "curry",
-    "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/ee2d952c-1d7d-48f7-81b3-cb967343eb6c-curry.png",
-    "__v": 0
+    "imageUrl": "assets/foodly/curry.png",
+    "__v": 0,
+  },
+  {
+    "_id": "6537ece708ff5b7de97d0695",
+    "title": "Spaghetti",
+    "value": "spaghetti",
+    "imageUrl": "assets/foodly/Spaghetti.png",
+    "createdAt": "2023-10-24T16:12:23.571Z",
+    "updatedAt": "2023-10-24T16:12:23.571Z",
+    "__v": 0,
   },
   {
     "_id": "6531206cbbe4998e90af3feb",
     "title": "Pizza",
     "value": "pizza",
-    "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/466693e6-f999-42e0-8794-09325ece1b45-Pizza.png",
-    "__v": 0
+    "imageUrl": "assets/foodly/Pizza.png",
+    "__v": 0,
+  },
+  // {
+  //   "_id": "6531209dbbe4998e90af3fef",
+  //   "title": "Pasta",
+  //   "value": "pasta",
+  //   "imageUrl": "assets/foodly/Pizza.png",
+  //   "__v": 0,
+  // },
+  {
+    "_id": "6531209dbbe4998e90af3fef",
+    "title": "Sushi",
+    "value": "sushi",
+    "imageUrl": "assets/foodly/Sushi.png",
+    "__v": 0,
   },
   {
     "_id": "6531209dbbe4998e90af3fef",
-    "title": "Pasta",
-    "value": "pasta",
-    "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/6645cf41-bc89-4dd0-9f80-bba9487633b2-Spaghetti.png",
-    "__v": 0
+    "title": "Chinese",
+    "value": "chinese",
+    "imageUrl": "assets/foodly/chinese.png",
+    "__v": 0,
   },
   {
-    "_id": "653120babbe4998e90af3ff1",
-    "title": "Beverages",
-    "value": "beverages",
-    "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/93c4b3df-9e55-4308-a834-9fe4ad67c0b3-bar.png",
-    "__v": 0
+    "_id": "6531209dbbe4998e90af3fef",
+    "title": "Bento Box",
+    "value": "bento_box",
+    "imageUrl": "assets/foodly/Bento Box.png",
+    "__v": 0,
   },
+  // {
+  //   "_id": "653120babbe4998e90af3ff1",
+  //   "title": "Beverages",
+  //   "value": "beverages",
+  //   "imageUrl":
+  //       "https://d326fntlu7tb1e.cloudfront.net/uploads/93c4b3df-9e55-4308-a834-9fe4ad67c0b3-bar.png",
+  //   "__v": 0,
+  // },
   {
     "_id": "65312084bbe4998e90af3fed",
     "title": "Burgers",
     "value": "burgers",
-    "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/3c94bc09-b8b9-4961-accb-f68b7e8121cc-Hamburger.png",
-    "__v": 0
+    "imageUrl": "assets/foodly/Hamburger.png",
+    "__v": 0,
   },
   {
     "_id": "65310efb81e4d98d60b093c3",
     "title": "Chicken",
     "value": "chicken",
-    "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/139718b2-2832-40c5-8d7b-11fd9feb0aac-chicken.png",
-    "__v": 0
+    "imageUrl": "assets/foodly/chicken.png",
+    "__v": 0,
+  },
+  {
+    "_id": "65310efb81e4d98d60b093c3",
+    "title": "Bar",
+    "value": "bar",
+    "imageUrl": "assets/foodly/bar.png",
+    "__v": 0,
   },
   {
     "_id": "653120e1bbe4998e90af3ff3",
     "title": "More",
     "value": "more",
-    "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/08323562-a3c6-461d-95a3-b3817c99871b-more.png",
-    "__v": 0
-  }
+    "imageUrl": "assets/foodly/more.png",
+    "__v": 0,
+  },
 ];
 
 const restaurants = [
@@ -87,8 +117,8 @@ const restaurants = [
       "address": "698 Post St, San Francisco, CA 94109, United States",
       "title": "Lapisara Eatery",
       "latitudeDelta": 0.0122,
-      "longitudeDelta": 0.0221
-    }
+      "longitudeDelta": 0.0221,
+    },
   },
   {
     "_id": "6530ea6bc9e72013e5b6592d",
@@ -109,8 +139,8 @@ const restaurants = [
       "address": "333 O'Farrell St, San Francisco, CA 94102, United States",
       "title": "Burger King",
       "latitudeDelta": 0.0122,
-      "longitudeDelta": 0.0221
-    }
+      "longitudeDelta": 0.0221,
+    },
   },
   {
     "_id": "6530eb66c9e72013e5b65931",
@@ -131,8 +161,8 @@ const restaurants = [
       "address": "333 O'Farrell St, San Francisco, CA 94102, United States",
       "title": "La Foods",
       "latitudeDelta": 0.0122,
-      "longitudeDelta": 0.0221
-    }
+      "longitudeDelta": 0.0221,
+    },
   },
   {
     "_id": "6530eb23c9e72013e5b6592f",
@@ -153,12 +183,12 @@ const restaurants = [
       "address": "333 O'Farrell St, San Francisco, CA 94102, United States",
       "title": "Italian Restaurant",
       "latitudeDelta": 0.0122,
-      "longitudeDelta": 0.0221
-    }
-  }
+      "longitudeDelta": 0.0221,
+    },
+  },
 ];
 
-List <Map<String, dynamic>> foods = [
+List<Map<String, dynamic>> foods = [
   {
     "_id": "65316968f94c6496dc84f3c1",
     "title": "Tiramisu",
@@ -177,14 +207,13 @@ List <Map<String, dynamic>> foods = [
       {"id": 2, "title": "Coffee", "price": "1.50"},
       {"id": 3, "title": "Mascarpone Cheese", "price": "2.50"},
       {"id": 4, "title": "Cocoa", "price": "0.50"},
-      {"id": 5, "title": "Sugar", "price": "0.50"}
+      {"id": 5, "title": "Sugar", "price": "0.50"},
     ],
-    "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-    ,
+    "imageUrl":
+        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
-    "time": "35 min"
+    "time": "35 min",
   },
   {
     "_id": "653168e9f94c6496dc84f3bf",
@@ -204,14 +233,13 @@ List <Map<String, dynamic>> foods = [
       {"id": 2, "title": "Pancetta", "price": "3.00"},
       {"id": 3, "title": "Parmesan Cheese", "price": "2.00"},
       {"id": 4, "title": "Black Pepper", "price": "0.50"},
-      {"id": 5, "title": "Pasta", "price": "3.00"}
+      {"id": 5, "title": "Pasta", "price": "3.00"},
     ],
-    "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-    ,
+    "imageUrl":
+        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
     "__v": 2,
     "category": "6531209dbbe4998e90af3fef",
-    "time": "20 min"
+    "time": "20 min",
   },
   {
     "_id": "653169a9f94c6496dc84f3c3",
@@ -231,14 +259,13 @@ List <Map<String, dynamic>> foods = [
       {"id": 2, "title": "Walnuts", "price": "2.00"},
       {"id": 3, "title": "Quinoa", "price": "1.50"},
       {"id": 4, "title": "Cherry Tomatoes", "price": "1.00"},
-      {"id": 5, "title": "Vinaigrette", "price": "0.50"}
+      {"id": 5, "title": "Vinaigrette", "price": "0.50"},
     ],
-   "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-    ,
+    "imageUrl":
+        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
-    "time": "55 min"
+    "time": "55 min",
   },
   {
     "_id": "65316771f94c6496dc84f3bd",
@@ -256,14 +283,13 @@ List <Map<String, dynamic>> foods = [
     "additives": [
       {"id": 1, "title": "Cheese", "price": "2.00"},
       {"id": 2, "title": "Pepperoni", "price": "2.50"},
-      {"id": 3, "title": "Ketch up", "price": "0.50"}
+      {"id": 3, "title": "Ketch up", "price": "0.50"},
     ],
-    "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-    ,
+    "imageUrl":
+        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
-    "time": "30 min"
+    "time": "30 min",
   },
   {
     "_id": "65316a01f94c6496dc84f3c7",
@@ -283,14 +309,13 @@ List <Map<String, dynamic>> foods = [
       {"id": 2, "title": "Pineapple", "price": "1.50"},
       {"id": 3, "title": "Banana", "price": "1.00"},
       {"id": 4, "title": "Coconut Milk", "price": "1.50"},
-      {"id": 5, "title": "Ice", "price": "0.50"}
+      {"id": 5, "title": "Ice", "price": "0.50"},
     ],
-   "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-    ,
+    "imageUrl":
+        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
-    "time": "25 min"
+    "time": "25 min",
   },
   {
     "_id": "653169d8f94c6496dc84f3c5",
@@ -301,7 +326,7 @@ List <Map<String, dynamic>> foods = [
       "Dinner",
       "Grill",
       "Non-Vegetarian",
-      "Barbecue"
+      "Barbecue",
     ],
     "code": "41007428",
     "isAvailable": true,
@@ -316,15 +341,14 @@ List <Map<String, dynamic>> foods = [
       {"id": 2, "title": "Beef", "price": "4.00"},
       {"id": 3, "title": "Lamb", "price": "4.00"},
       {"id": 4, "title": "Pork", "price": "3.50"},
-      {"id": 5, "title": "Barbecue Sauce", "price": "1.00"}
+      {"id": 5, "title": "Barbecue Sauce", "price": "1.00"},
     ],
-    "imageUrl": 
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-    ,
+    "imageUrl":
+        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
-    "time": "45 min"
-  }
+    "time": "45 min",
+  },
 ];
 
 const cart = [
@@ -339,15 +363,15 @@ const cart = [
       "ratingCount": "150",
       "imageUrl": [
         "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
-      ]
+        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+      ],
     },
     "additives": ["Extra Cheese", "Mushrooms"],
     "instructions": "",
     "totalPrice": 25.98,
     "quantity": 2,
-    "__v": 0
-  }
+    "__v": 0,
+  },
 ];
 
 const profile = {
@@ -359,35 +383,13 @@ const profile = {
   "userType": "Vendor",
   "profile":
       "https://d326fntlu7tb1e.cloudfront.net/uploads/bdec9d7d-0544-4fc4-823d-3b898f6dbbbf-vinci_03.jpeg",
-  "updatedAt": "2023-10-24T11:02:28.215Z"
+  "updatedAt": "2023-10-24T11:02:28.215Z",
 };
 
 const choicesList = [
-  {
-    "id": 1,
-    "name": "Pick Up",
-    "value": "pickup",
-  },
-  {
-    "id": 2,
-    "name": "4 Star",
-    "value": "4star",
-  },
-  {
-    "id": 3,
-    "name": "3 Star",
-    "value": "3star",
-  },
-  {
-    "id": 4,
-    "name": "Under 30 min",
-    "value": "under30",
-  },
-  {
-    "id": 5,
-    "name": "Recommended",
-    "value": "recommended",
-  },
+  {"id": 1, "name": "Pick Up", "value": "pickup"},
+  {"id": 2, "name": "4 Star", "value": "4star"},
+  {"id": 3, "name": "3 Star", "value": "3star"},
+  {"id": 4, "name": "Under 30 min", "value": "under30"},
+  {"id": 5, "name": "Recommended", "value": "recommended"},
 ];
-
-

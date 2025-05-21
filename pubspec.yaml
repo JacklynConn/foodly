@@ -30,6 +30,7 @@ flutter:
     - assets/images/
     - assets/anime/
     - assets/icons/
+    - assets/foodly/
 
   # fonts:
   #   - family: Schyler
