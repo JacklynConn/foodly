@@ -10,27 +10,29 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 20.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.0.w, vertical: 6.0.h),
       width: width,
       height: 110.h,
-      padding: EdgeInsets.symmetric(horizontal: 12.0.w, vertical: 6.0.h),
       color: kOffWhite,
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CircleAvatar(
-                radius: 23.r,
-                backgroundColor: kSecondary,
-                backgroundImage: NetworkImage(
-                  'https://th.bing.com/th/id/OIP.kN8tEO6_wPf1PMEofLrdTgHaGh?rs=1&pid=ImgDetMain',
+      child: Container(
+        margin: EdgeInsets.only(top: 20.h),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 22.r,
+                  backgroundColor: kSecondary,
+                  backgroundImage: NetworkImage(
+                    'https://th.bing.com/th/id/OIP.kN8tEO6_wPf1PMEofLrdTgHaGh?rs=1&pid=ImgDetMain',
+                  ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 6.h, left: 8.w),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                SizedBox(width: 10.w),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ReusableText(
@@ -40,7 +42,7 @@ class CustomAppBar extends StatelessWidget {
                     SizedBox(
                       width: width * 0.65,
                       child: Text(
-                        "16768 2nd St, New York",
+                        "16768 21st Ave N, Plymouth, MN 55447",
                         overflow: TextOverflow.ellipsis,
                         style: appStyle(11, kGrayLight, FontWeight.normal),
                       ),
@@ -48,18 +50,18 @@ class CustomAppBar extends StatelessWidget {
 
                   ],
                 ),
+              ],
+            ),
+            Text(
+              '❄️',
+              style: TextStyle(
+                fontSize: 11.sp,
+                color: kGrayLight,
+                fontWeight: FontWeight.w400,
               ),
-              Text(
-                '❄️',
-                style: TextStyle(
-                  fontSize: 11.sp,
-                  color: kGrayLight,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
