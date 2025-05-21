@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodly/common/custom_app_bar.dart';
 import '/common/custom_container.dart';
 import '/constants/constants.dart';
 
@@ -12,7 +13,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: kPrimary,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(130.h),
-        child: Container(height: 130),
+        child: CustomAppBar(),
       ),
       body: SafeArea(child: CustomContainer(containerContent: Container())),
     );
