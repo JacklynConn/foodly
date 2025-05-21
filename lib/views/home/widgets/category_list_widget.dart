@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../controllers/category_controller.dart';
 import '/common/app_style.dart';
 import '/common/reusable_text.dart';
 import '/constants/constants.dart';
 import '/constants/uidata.dart';
+import 'package:get/get.dart';
 
 class CategoryListWidget extends StatelessWidget {
   const CategoryListWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CategoryController());
     return Container(
       height: 80.h,
       padding: EdgeInsets.only(left: 12.w, top: 10.h),
@@ -19,8 +22,7 @@ class CategoryListWidget extends StatelessWidget {
           var category = categories[index];
           return GestureDetector(
             onTap: () {
-              // Handle category tap
-              print('Tapped on ${category['title']}');
+
             },
             child: Container(
               margin: EdgeInsets.only(right: 5.w),
