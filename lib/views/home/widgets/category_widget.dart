@@ -41,8 +41,7 @@ class CategoryWidget extends StatelessWidget {
             color: kWhite,
             borderRadius: BorderRadius.circular(10.r),
             border: Border.all(
-              color:
-                  controller.categoryValue == category['_id']
+              color: controller.categoryValue == category['_id']
                       ? kSecondary
                       : kOffWhite,
               width: 0.5.w,
