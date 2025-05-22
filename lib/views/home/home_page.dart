@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodly/views/home/all_fastest_foods_page.dart';
+import '/views/home/recommendations_page.dart';
 import '../../common/heading.dart';
+import 'all_nearby_restaurants.dart';
 import 'widgets/category_list_widget.dart';
 import '/common/custom_app_bar.dart';
 import '/common/custom_container.dart';
 import '/constants/constants.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -25,21 +29,33 @@ class HomePage extends StatelessWidget {
               Heading(
                 text: "Nearby Restaurants",
                 onTap: () {
-                  // Navigate to all categories page
+                  Get.to(
+                    () => AllNearbyRestaurants(),
+                    transition: Transition.cupertino,
+                    duration: const Duration(milliseconds: 900),
+                  );
                 },
               ),
 
               Heading(
                 text: "Try Something New",
                 onTap: () {
-                  // Navigate to all categories page
+                  Get.to(
+                    () => RecommendationsPage(),
+                    transition: Transition.cupertino,
+                    duration: const Duration(milliseconds: 900),
+                  );
                 },
               ),
 
               Heading(
                 text: "Food Closer to You",
                 onTap: () {
-                  // Navigate to all categories page
+                  Get.to(
+                    () => AllFastestFoodsPage(),
+                    transition: Transition.cupertino,
+                    duration: const Duration(milliseconds: 900),
+                  );
                 },
               ),
             ],
