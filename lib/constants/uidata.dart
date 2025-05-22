@@ -103,11 +103,11 @@ const restaurants = [
     "title": "Lapisara Eatery",
     "time": "6:00am - 9:00pm",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://th.bing.com/th/id/OIP.zl3siTfrzCHtTrELUp1cSgHaE8?rs=1&pid=ImgDetMain",
     "owner": "fdfsdfsdfs",
     "code": "41007428",
     "logoUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://th.bing.com/th/id/OIP.kN8tEO6_wPf1PMEofLrdTgHaGh?rs=1&pid=ImgDetMain",
     "rating": 5,
     "ratingCount": "6765",
     "coords": {
@@ -125,11 +125,11 @@ const restaurants = [
     "title": "Burger King",
     "time": "6:00am - 9:00pm",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://th.bing.com/th/id/OIP.iJADC19VrOO8lrZZZbSenwHaES?w=1100&h=638&rs=1&pid=ImgDetMain",
     "owner": "sjgdsjgfjshhjs",
     "code": "41007428",
     "logoUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://th.bing.com/th/id/OIP.kN8tEO6_wPf1PMEofLrdTgHaGh?rs=1&pid=ImgDetMain",
     "rating": 5,
     "ratingCount": "3278",
     "coords": {
@@ -147,11 +147,11 @@ const restaurants = [
     "title": "La Foods",
     "time": "6:00am - 9:00pm",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://th.bing.com/th/id/OIP.DERdrOtlpyWld_Blp7PrdwAAAA?rs=1&pid=ImgDetMain",
     "owner": "fgdgdfgd",
     "code": "41007428",
     "logoUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://th.bing.com/th/id/OIP.kN8tEO6_wPf1PMEofLrdTgHaGh?rs=1&pid=ImgDetMain",
     "rating": 5,
     "ratingCount": "5666",
     "coords": {
@@ -169,11 +169,11 @@ const restaurants = [
     "title": "Italian Restaurant",
     "time": "6:00am - 9:00pm",
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://th.bing.com/th/id/R.8b6cbbb98358795307d06970955ae0e9?rik=I9F46dMEJ0ppuA&riu=http%3a%2f%2fwww.liner.jp%2fimages%2fspot%2f6%2f6_1.jpg&ehk=b26rbDb%2b7HJDS9kmg5P1u84M%2b%2f4xVB6CSQJW4FQSFk4%3d&risl=&pid=ImgRaw&r=0",
     "owner": "sjgdsjgfjshhjs",
     "code": "41007428",
     "logoUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://th.bing.com/th/id/OIP.kN8tEO6_wPf1PMEofLrdTgHaGh?rs=1&pid=ImgDetMain",
     "rating": 5,
     "ratingCount": "3278",
     "coords": {

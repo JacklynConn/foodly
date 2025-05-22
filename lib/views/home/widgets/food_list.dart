@@ -3,13 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodly/constants/uidata.dart';
 import '../../../constants/constants.dart';
 
-class FoodListWidget extends StatelessWidget {
-  const FoodListWidget({super.key});
+class FoodList extends StatelessWidget {
+  const FoodList({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 210.h,
+      height: 194.h,
       padding: EdgeInsets.only(left: 12.w),
       child: ListView(
         scrollDirection: Axis.horizontal,

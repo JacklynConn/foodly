@@ -16,6 +16,7 @@ dependencies:
   google_fonts: ^6.2.1 # For custom fonts
   get: ^4.7.2 # For state management
   flutter_vector_icons: ^2.0.0 # For vector icons
+  flutter_rating_bar: ^4.0.1 # For rating bar
 
 dev_dependencies:
   flutter_test:
