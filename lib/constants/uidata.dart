@@ -210,7 +210,7 @@ List<Map<String, dynamic>> foods = [
       {"id": 5, "title": "Sugar", "price": "0.50"},
     ],
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://th.bing.com/th/id/OIP.fWkMWBumoksUdQxPKagguAHaEK?rs=1&pid=ImgDetMain",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "35 min",
@@ -236,7 +236,7 @@ List<Map<String, dynamic>> foods = [
       {"id": 5, "title": "Pasta", "price": "3.00"},
     ],
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://th.bing.com/th/id/R.65e9ddff46d63eb7f423bd81def65c9a?rik=RZue5eTZEewVzw&pid=ImgRaw&r=0",
     "__v": 2,
     "category": "6531209dbbe4998e90af3fef",
     "time": "20 min",
@@ -262,7 +262,7 @@ List<Map<String, dynamic>> foods = [
       {"id": 5, "title": "Vinaigrette", "price": "0.50"},
     ],
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://img.freepik.com/premium-photo/fresh-vegan-salad-bowl_174954-10992.jpg",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "55 min",
@@ -286,7 +286,7 @@ List<Map<String, dynamic>> foods = [
       {"id": 3, "title": "Ketch up", "price": "0.50"},
     ],
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://th.bing.com/th/id/OIP.AFuoZ5o0L2Fer3U90alDtQHaFp?w=185&h=141&c=7&r=0&o=5&dpr=1.3&pid=1.7",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "30 min",
@@ -312,7 +312,7 @@ List<Map<String, dynamic>> foods = [
       {"id": 5, "title": "Ice", "price": "0.50"},
     ],
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://restaurants.mu/blog-admin/wp-content/uploads/2019/12/trocpical-fruit-smoothie-4.jpg",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "25 min",
@@ -344,7 +344,7 @@ List<Map<String, dynamic>> foods = [
       {"id": 5, "title": "Barbecue Sauce", "price": "1.00"},
     ],
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://th.bing.com/th/id/OIP.4SohRVLNjVl69iT7uwtmKAHaD2?w=299&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "45 min",
