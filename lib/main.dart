@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodly/constants/constants.dart';
-import 'package:foodly/views/entrypoint.dart';
+import '/constants/constants.dart';
+import '/views/entrypoint.dart';
 import 'package:get/get.dart';
 
 void main() {
