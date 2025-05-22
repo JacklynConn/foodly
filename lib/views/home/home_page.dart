@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodly/views/home/all_fastest_foods_page.dart';
+import 'package:foodly/views/home/widgets/food_list_widget.dart';
+import '/views/home/widgets/nearby_restaurant_list_widget.dart';
+import '/views/home/all_fastest_foods_page.dart';
 import '/views/home/recommendations_page.dart';
 import '../../common/heading.dart';
 import 'all_nearby_restaurants.dart';
@@ -36,7 +38,7 @@ class HomePage extends StatelessWidget {
                   );
                 },
               ),
-
+              NearbyRestaurantListWidget(),
               Heading(
                 text: "Try Something New",
                 onTap: () {
@@ -47,7 +49,7 @@ class HomePage extends StatelessWidget {
                   );
                 },
               ),
-
+              FoodListWidget(),
               Heading(
                 text: "Food Closer to You",
                 onTap: () {
@@ -58,6 +60,7 @@ class HomePage extends StatelessWidget {
                   );
                 },
               ),
+              FoodListWidget(),
             ],
           ),
         ),

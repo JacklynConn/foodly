@@ -20,7 +20,10 @@ class CustomContainer extends StatelessWidget {
         child: Container(
           width: width,
           color: kOffWhite,
-          child: SingleChildScrollView(child: containerContent),
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: containerContent,
+          ),
         ),
       ),
     );

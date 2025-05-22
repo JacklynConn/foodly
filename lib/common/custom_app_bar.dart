@@ -36,7 +36,7 @@ class CustomAppBar extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ReusableText(
-                      text: "Deliver to",
+                      text: "Delivering to",
                       style: appStyle(13, kSecondary, FontWeight.w600),
                     ),
                     SizedBox(

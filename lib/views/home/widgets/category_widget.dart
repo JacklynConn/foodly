@@ -15,7 +15,6 @@ class CategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(CategoryController());
-
     return GestureDetector(
       onTap: () {
         if (controller.categoryValue == category['_id']) {
@@ -38,7 +37,7 @@ class CategoryWidget extends StatelessWidget {
           padding: EdgeInsets.only(top: 4.h),
           width: width * 0.19,
           decoration: BoxDecoration(
-            color: kWhite,
+            color: kOffWhite,
             borderRadius: BorderRadius.circular(10.r),
             border: Border.all(
               color: controller.categoryValue == category['_id']
