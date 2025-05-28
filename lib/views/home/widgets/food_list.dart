@@ -21,10 +21,9 @@ class FoodList extends StatelessWidget {
               image: '${food['imageUrl']}',
               title: '${food['title']}',
               time: '${food['time']}',
-              price: '${food['price']}',
+              price: '${food['price'].toStringAsFixed(2)}',
               onTap: () {
                 // Handle tap event
-                print('Tapped on ${food['title']}');
               },
             ),
           );

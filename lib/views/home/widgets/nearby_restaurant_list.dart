@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodly/views/home/widgets/restaurant_tile.dart';
 import '/views/home/widgets/restaurant_widget.dart';
 import '../../../constants/uidata.dart';
+import 'package:get/get.dart';
 
 class NearbyRestaurantList extends StatelessWidget {
   const NearbyRestaurantList({super.key});
@@ -24,8 +26,11 @@ class NearbyRestaurantList extends StatelessWidget {
               time: '${restaurant['time']}',
               rating: '${restaurant['rating']}',
               onTap: () {
-                // Handle tap event
-                print('Tapped on ${restaurant['name']}');
+                Get.to(
+                  () => RestaurantTile(restaurant: restaurant),
+                  transition: Transition.cupertino,
+                  duration: const Duration(milliseconds: 900),
+                );
               },
             ),
           );

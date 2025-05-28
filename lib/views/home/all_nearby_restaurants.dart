@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodly/common/background_container.dart';
+import 'package:foodly/constants/uidata.dart';
+import 'package:foodly/views/home/widgets/restaurant_tile.dart';
 import '../../common/app_style.dart';
 import '../../common/reusable_text.dart';
 import '../../constants/constants.dart';
@@ -17,12 +20,21 @@ class AllNearbyRestaurants extends StatelessWidget {
         ),
         centerTitle: true,
         backgroundColor: kOffWhite,
-        elevation: 0.3,
+        elevation: 0,
       ),
-      body: Center(
-        child: const Text(
-          'All Nearby Restaurants',
-          style: TextStyle(fontSize: 20),
+      body: SafeArea(
+        child: BackgroundContainer(
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView(
+              scrollDirection: Axis.vertical,
+              children: List.generate(restaurants.length, (index) {
+                var restaurant = restaurants[index];
+                return RestaurantTile(restaurant: restaurant);
+              }),
+            ),
+          ),
         ),
       ),
     );
