@@ -13,27 +13,26 @@ class AllNearbyRestaurants extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kSecondary,
       appBar: AppBar(
         title: ReusableText(
           text: 'Nearby Restaurants',
-          style: appStyle(13.sp, kGray, FontWeight.w600),
+          style: appStyle(13.sp, kLightWhite, FontWeight.w600),
         ),
         centerTitle: true,
-        backgroundColor: kOffWhite,
+        backgroundColor: kSecondary,
         elevation: 0,
       ),
-      body: SafeArea(
-        child: BackgroundContainer(
-          color: Colors.white,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListView(
-              scrollDirection: Axis.vertical,
-              children: List.generate(restaurants.length, (index) {
-                var restaurant = restaurants[index];
-                return RestaurantTile(restaurant: restaurant);
-              }),
-            ),
+      body: BackgroundContainer(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: ListView(
+            scrollDirection: Axis.vertical,
+            children: List.generate(restaurants.length, (index) {
+              var restaurant = restaurants[index];
+              return RestaurantTile(restaurant: restaurant);
+            }),
           ),
         ),
       ),
