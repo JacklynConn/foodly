@@ -17,6 +17,9 @@ dependencies:
   get: ^4.7.2 # For state management
   flutter_vector_icons: ^2.0.0 # For vector icons
   flutter_rating_bar: ^4.0.1 # For rating bar
+  http: ^1.4.0 # For HTTP requests
+  flutter_hooks: ^0.21.2 # For hooks in Flutter
+  shimmer: ^3.0.0 # For shimmer effect
 
 dev_dependencies:
   flutter_test:
