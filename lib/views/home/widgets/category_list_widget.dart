@@ -14,7 +14,6 @@ class CategoryListWidget extends HookWidget {
     final hookResult = useFetchCategories();
     List<CategoriesModel>? categoriesList = hookResult.data;
     final isLoading = hookResult.isLoading;
-    final error = hookResult.error;
 
     return isLoading
         ? const CategoriesShimmer()
