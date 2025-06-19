@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodly/models/categories_model.dart';
 import 'package:get/get.dart';
 import '../../../common/app_style.dart';
 import '../../../common/reusable_text.dart';
@@ -9,7 +10,7 @@ import '../category_page.dart';
 class CategoryTile extends StatelessWidget {
   const CategoryTile({super.key, required this.category});
 
-  final dynamic category;
+  final CategoriesModel category;
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +25,10 @@ class CategoryTile extends StatelessWidget {
       leading: CircleAvatar(
         backgroundColor: kGrayLight,
         radius: 18.r,
-        child: Image.asset(category['imageUrl'], fit: BoxFit.contain),
+        child: Image.network(category.imageUrl, fit: BoxFit.contain),
       ),
       title: ReusableText(
-        text: category['title'],
+        text: category.title,
         style: appStyle(12, kDark, FontWeight.normal),
       ),
       trailing: Icon(
