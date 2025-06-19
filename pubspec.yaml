@@ -20,6 +20,7 @@ dependencies:
   http: ^1.4.0 # For HTTP requests
   flutter_hooks: ^0.21.2 # For hooks in Flutter
   shimmer: ^3.0.0 # For shimmer effect
+  cached_network_image: ^3.4.1 # For caching network images
 
 dev_dependencies:
   flutter_test:
