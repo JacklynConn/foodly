@@ -10,7 +10,7 @@ import 'home/home_page.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
-
+  
   final List<Widget> pageList = [
     const HomePage(),
     const SearchPage(),

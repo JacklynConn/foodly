@@ -98,16 +98,14 @@ class RestaurantTile extends StatelessWidget {
               width: 60.w,
               height: 19.h,
               decoration: BoxDecoration(
-                color:
-                    restaurant.isAvailable == true || restaurant.isAvailable == null
+                color: restaurant.isAvailable == true
                         ? kPrimary
                         : kSecondaryLight,
                 borderRadius: BorderRadius.circular(10.r),
               ),
               child: Center(
                 child: ReusableText(
-                  text:
-                      restaurant.isAvailable == true || restaurant.isAvailable == null
+                  text: restaurant.isAvailable == true
                           ? 'Open'
                           : 'Closed',
                   style: appStyle(12, kLightWhite, FontWeight.w600),

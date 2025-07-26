@@ -9,7 +9,7 @@ FetchHook useFetchRestaurant(String code) {
   final restaurantItems = useState<List<RestaurantsModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
-  final appiError = useState<ApiError?>(null);
+  final apiError = useState<ApiError?>(null);
 
   Future<void> fetchData() async {
     isLoading.value = true;
@@ -21,7 +21,7 @@ FetchHook useFetchRestaurant(String code) {
       if (response.statusCode == 200) {
         restaurantItems.value = restaurantsModelFromJson(response.body);
       } else {
-        appiError.value = apiErrorFromJson(response.body);
+        apiError.value = apiErrorFromJson(response.body);
       }
     } catch (e) {
       error.value = e as Exception;

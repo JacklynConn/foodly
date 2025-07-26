@@ -1,12 +1,12 @@
-import 'package:foodly/constants/constants.dart';
-import 'package:foodly/models/api_error.dart';
-import 'package:foodly/models/categories_model.dart';
-import 'package:foodly/models/hook_models/hook_result.dart';
+import '/constants/constants.dart';
+import '/models/api_error.dart';
+import '/models/food_model.dart';
+import '/models/hook_models/hook_result.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:http/http.dart' as http;
 
-FetchHook useFetchCategories() {
-  final categoriesItems = useState<List<CategoriesModel>?>(null);
+FetchHook useFetchFood(String code) {
+  final foodItems = useState<List<FoodModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
   final apiError = useState<ApiError?>(null);
@@ -15,11 +15,11 @@ FetchHook useFetchCategories() {
     isLoading.value = true;
 
     try {
-      Uri url = Uri.parse('$appBaseUrl/api/category/random');
+      Uri url = Uri.parse('$appBaseUrl/api/foods/$code');
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
-        categoriesItems.value = categoriesModelFromJson(response.body);
+        foodItems.value = foodModelFromJson(response.body);
       } else {
         apiError.value = apiErrorFromJson(response.body);
       }
@@ -41,7 +41,7 @@ FetchHook useFetchCategories() {
   }
 
   return FetchHook(
-    data: categoriesItems.value,
+    data: foodItems.value,
     isLoading: isLoading.value,
     error: error.value,
     refetch: refetch,

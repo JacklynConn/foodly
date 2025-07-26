@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodly/common/background_container.dart';
-import 'package:foodly/common/shimmers/foodlist_shimmer.dart';
-import 'package:foodly/views/home/widgets/restaurant_tile.dart';
+import '/common/background_container.dart';
+import '/common/shimmers/foodlist_shimmer.dart';
+import '/views/home/widgets/restaurant_tile.dart';
 import '../../common/app_style.dart';
 import '../../common/reusable_text.dart';
 import '../../constants/constants.dart';
