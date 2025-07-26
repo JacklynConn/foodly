@@ -5,7 +5,7 @@ import '/models/hook_models/hook_result.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:http/http.dart' as http;
 
-FetchHook useFetchFood(String code) {
+FetchHook useFetchAllFoods(String code) {
   final foodItems = useState<List<FoodModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
@@ -15,7 +15,7 @@ FetchHook useFetchFood(String code) {
     isLoading.value = true;
 
     try {
-      Uri url = Uri.parse('$appBaseUrl/api/foods/$code');
+      Uri url = Uri.parse('$appBaseUrl/api/foods/recommendation/$code');
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
