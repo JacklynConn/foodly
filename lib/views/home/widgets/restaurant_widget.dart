@@ -29,7 +29,7 @@ class RestaurantWidget extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: width * 0.75,
-        height: 192.h,
+        height: 200.h,
         decoration: BoxDecoration(
           color: kLightWhite,
           borderRadius: BorderRadius.circular(12.r),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodly/common/shimmers/nearby_shimmer.dart';
-import 'package:foodly/models/food_model.dart';
+import '/common/shimmers/nearby_shimmer.dart';
+import '/models/food_model.dart';
 import '../../../hooks/fetch_foods.dart';
 import '/views/home/widgets/food_widget.dart';
 
