@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodly/controllers/category_controller.dart';
 import 'package:foodly/views/home/widgets/food_list.dart';
 import '/views/home/widgets/nearby_restaurant_list.dart';
 import '/views/home/all_fastest_foods_page.dart';
 import '/views/home/recommendations_page.dart';
 import '../../common/heading.dart';
 import 'all_nearby_restaurants.dart';
+import 'widgets/category_foods_list.dart';
 import 'widgets/category_list_widget.dart';
 import '/common/custom_app_bar.dart';
 import '/common/custom_container.dart';
@@ -17,6 +19,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CategoryController());
     return Scaffold(
       backgroundColor: kPrimary,
       appBar: PreferredSize(
@@ -29,41 +32,68 @@ class HomePage extends StatelessWidget {
             children: [
               CategoryListWidget(),
 
-              Heading(
-                text: "Try Something New",
-                onTap: () {
-                  Get.to(
-                    () => RecommendationsPage(),
-                    transition: Transition.cupertino,
-                    duration: const Duration(milliseconds: 900),
-                  );
-                },
-              ),
-              FoodList(),
+              Obx(
+                () =>
+                    controller.categoryValue == ''
+                        ? Column(
+                          children: [
+                            Heading(
+                              text: "Try Something New",
+                              onTap: () {
+                                Get.to(
+                                  () => RecommendationsPage(),
+                                  transition: Transition.cupertino,
+                                  duration: const Duration(milliseconds: 900),
+                                );
+                              },
+                            ),
+                            FoodList(),
 
-              Heading(
-                text: "Nearby Restaurants",
-                onTap: () {
-                  Get.to(
-                    () => AllNearbyRestaurants(),
-                    transition: Transition.cupertino,
-                    duration: const Duration(milliseconds: 900),
-                  );
-                },
-              ),
-              NearbyRestaurantList(),
+                            Heading(
+                              text: "Nearby Restaurants",
+                              onTap: () {
+                                Get.to(
+                                  () => AllNearbyRestaurants(),
+                                  transition: Transition.cupertino,
+                                  duration: const Duration(milliseconds: 900),
+                                );
+                              },
+                            ),
+                            NearbyRestaurantList(),
 
-              Heading(
-                text: "Food Closer to You",
-                onTap: () {
-                  Get.to(
-                    () => AllFastestFoodsPage(),
-                    transition: Transition.cupertino,
-                    duration: const Duration(milliseconds: 900),
-                  );
-                },
+                            Heading(
+                              text: "Food Closer to You",
+                              onTap: () {
+                                Get.to(
+                                  () => AllFastestFoodsPage(),
+                                  transition: Transition.cupertino,
+                                  duration: const Duration(milliseconds: 900),
+                                );
+                              },
+                            ),
+                            FoodList(),
+                          ],
+                        )
+                        : CustomContainer(
+                          containerContent: Column(
+                            children: [
+                              Heading(
+                                more: true,
+                                text:
+                                    "Explore ${controller.titleValue} Category",
+                                onTap: () {
+                                  Get.to(
+                                    () => RecommendationsPage(),
+                                    transition: Transition.cupertino,
+                                    duration: const Duration(milliseconds: 900),
+                                  );
+                                },
+                              ),
+                              CategoryFoodsList(),
+                            ],
+                          ),
+                        ),
               ),
-              FoodList(),
             ],
           ),
         ),
