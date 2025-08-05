@@ -22,6 +22,7 @@ class FoodList extends HookWidget {
           padding: EdgeInsets.only(left: 12.w),
           child: ListView(
             scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
             children: List.generate(foods!.length, (index) {
               FoodModel food = foods[index];
               return Padding(

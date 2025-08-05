@@ -21,7 +21,7 @@ class Heading extends StatelessWidget {
         children: [
           ReusableText(
             text: text,
-            style: appStyle(16.sp, kDark, FontWeight.bold),
+            style: appStyle(14.sp, kDark, FontWeight.bold),
           ),
           GestureDetector(
             onTap: onTap,

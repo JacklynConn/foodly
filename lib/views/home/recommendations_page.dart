@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodly/common/shimmers/foodlist_shimmer.dart';
 import 'package:foodly/common/shimmers/nearby_shimmer.dart';
 import '../../common/app_style.dart';
 import '../../common/background_container.dart';
@@ -35,7 +36,7 @@ class RecommendationsPage extends HookWidget {
         color: Colors.white,
         child:
             isLoading
-                ? NearbyShimmer()
+                ? FoodsListShimmer()
                 : Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: ListView(
