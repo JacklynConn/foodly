@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import '../views/profile/profile_page.dart';
@@ -48,7 +49,7 @@ class MainScreen extends StatelessWidget {
                       label: 'Home',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.search),
+                      icon: Icon(CupertinoIcons.search),
                       label: 'Search',
                     ),
                     BottomNavigationBarItem(
