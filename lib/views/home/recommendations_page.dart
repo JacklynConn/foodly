@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodly/common/shimmers/foodlist_shimmer.dart';
-import 'package:foodly/common/shimmers/nearby_shimmer.dart';
 import '../../common/app_style.dart';
 import '../../common/background_container.dart';
 import '../../common/reusable_text.dart';

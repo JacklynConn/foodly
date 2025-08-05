@@ -23,11 +23,8 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SearchFoodController());
-    return GestureDetector(
-      onTap: () {
-        FocusScope.of(context).unfocus();
-      },
-      child: Scaffold(
+    return Obx(
+      () => Scaffold(
         backgroundColor: kPrimary,
         appBar: AppBar(
           toolbarHeight: 74.h,
@@ -41,14 +38,28 @@ class _SearchPageState extends State<SearchPage> {
               keyboardType: TextInputType.text,
               hintText: 'Search for Food',
               contentPadding: EdgeInsets.symmetric(
-                vertical: 14.h,
+                vertical: 12.h,
                 horizontal: 10.w,
               ),
               suffixIcon: GestureDetector(
                 onTap: () {
-                  controller.searchFoods(_searchController.text);
+                  if (controller.isTriggered == false) {
+                    controller.searchFoods(_searchController.text);
+                    controller.setTriggered = true;
+                  } else {
+                    controller.searchResults = null;
+                    controller.setTriggered = false;
+                    _searchController.clear();
+                  }
                 },
-                child: Icon(Ionicons.search_circle, size: 40.h, color: kGray),
+                child:
+                    controller.isTriggered == false
+                        ? Icon(
+                          Ionicons.search_circle,
+                          size: 30.h,
+                          color: kPrimary,
+                        )
+                        : Icon(Ionicons.close_circle, size: 30.h, color: kRed),
               ),
             ),
           ),
