@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../../../common/app_style.dart';
 import '../../../common/reusable_text.dart';
 import '../../../constants/constants.dart';
+import '../../../controllers/category_controller.dart';
 import '../category_page.dart';
 
 class CategoryTile extends StatelessWidget {
@@ -14,8 +15,11 @@ class CategoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CategoryController());
     return ListTile(
       onTap: () {
+        controller.updateCategory = category.id;
+        controller.updateTitle = category.title;
         Get.to(
           () => CategoryPage(),
           transition: Transition.fadeIn,
