@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../food/food_detail_page.dart';
 import '/common/shimmers/nearby_shimmer.dart';
 import '/models/food_model.dart';
 import '../../../hooks/fetch_foods.dart';
 import '/views/home/widgets/food_widget.dart';
+import 'package:get/get.dart';
 
 class FoodList extends HookWidget {
   const FoodList({super.key});
@@ -28,13 +30,13 @@ class FoodList extends HookWidget {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: FoodWidget(
+                  onTap: () {
+                    Get.to(() => FoodDetailPage(food: food));
+                  },
                   image: food.imageUrl[0],
                   title: food.title,
                   time: food.time,
                   price: food.price.toStringAsFixed(2),
-                  onTap: () {
-                    // Handle tap event
-                  },
                 ),
               );
             }),
