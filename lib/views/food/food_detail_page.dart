@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:foodly/constants/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import '../../common/custom_button.dart';
 import '../../controllers/foods_controller.dart';
 import '../../models/food_model.dart';
 import 'package:get/get.dart';
@@ -35,6 +36,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                 ),
                 child: Stack(
                   children: [
+
                     SizedBox(
                       height: 230.h,
                       child: PageView.builder(
@@ -98,6 +100,17 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                           color: kPrimary,
                           size: 30.sp,
                         ),
+                      ),
+                    ),
+
+                    Positioned(
+                      bottom: 10.h,
+                      right: 12.w,
+                      child: CustomButton(
+                        onTap: () {},
+                        btnWidth: 120.w,
+                        radius: 25.r,
+                        text: 'Open Restaurant',
                       ),
                     ),
                   ],
