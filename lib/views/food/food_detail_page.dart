@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodly/common/reusable_text.dart';
 import 'package:foodly/constants/constants.dart';
-
-import '../../common/app_style.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import '../../models/food_model.dart';
 
 class FoodDetailPage extends StatefulWidget {
@@ -27,11 +25,47 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30.r),
                   bottomRight: Radius.circular(30.r),
                 ),
                 child: Stack(
-                  children: [Container(height: 230.h, color: kGray)],
+                  children: [
+                    SizedBox(
+                      height: 230.h,
+                      child: PageView.builder(
+                        itemCount: widget.food.imageUrl.length,
+                        itemBuilder: (context, i) {
+                          return Container(
+                            height: 230.h,
+                            width: width,
+                            color: kLightWhite,
+                            child: CachedNetworkImage(
+                              imageUrl: widget.food.imageUrl[i],
+                              fit: BoxFit.cover,
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+
+                    Positioned(
+                      bottom: 10.h,
+                      child: Row(
+                        children: List.generate(widget.food.imageUrl.length, (
+                          index,
+                        ) {
+                          return Container(
+                            margin: EdgeInsets.all(4.w),
+                            height: 6.h,
+                            width: 6.w,
+                            decoration: BoxDecoration(
+                              color: kSecondary,
+                              shape: BoxShape.circle,
+                            ),
+                          );
+                        }),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
