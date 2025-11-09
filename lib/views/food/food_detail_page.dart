@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:foodly/constants/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../../controllers/foods_controller.dart';
@@ -82,6 +83,21 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                             ),
                           );
                         }),
+                      ),
+                    ),
+
+                    Positioned(
+                      top: 40.h,
+                      left: 12.w,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Ionicons.chevron_back_circle,
+                          color: kPrimary,
+                          size: 30.sp,
+                        ),
                       ),
                     ),
                   ],
