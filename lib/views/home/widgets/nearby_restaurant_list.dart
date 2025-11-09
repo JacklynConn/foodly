@@ -13,7 +13,7 @@ class NearbyRestaurantList extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hookResult = useFetchRestaurant('41007428');
+    final hookResult = useFetchRestaurants('41007428');
     List<RestaurantsModel>? restaurants = hookResult.data;
     final isLoading = hookResult.isLoading;
     return isLoading

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:foodly/models/restaurants_model.dart';
 
-class FetchHook {
-  final dynamic data;
+class FetchRestaurant {
+  final RestaurantsModel? data;
   final bool isLoading;
   final Exception? error;
   final VoidCallback? refetch;
 
-  FetchHook({
+  FetchRestaurant({
     required this.data,
     required this.isLoading,
     required this.error,
