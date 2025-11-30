@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:foodly/constants/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:foodly/hooks/fetch_restaurant.dart';
 import 'package:foodly/views/restaurant/restaurant_page.dart';
 import '../../common/custom_button.dart';
 import '../../controllers/foods_controller.dart';
 import '../../models/food_model.dart';
 import 'package:get/get.dart';
 
-class FoodDetailPage extends StatefulWidget {
+class FoodDetailPage extends StatefulHookWidget {
   const FoodDetailPage({super.key, required this.food});
 
   final FoodModel food;
@@ -23,6 +25,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
 
   @override
   Widget build(BuildContext context) {
+    final hookResult = useFetchRestaurant(widget.food.restaurant);
     final controller = Get.put(FoodsController());
     return Scaffold(
       body: ListView(
@@ -30,12 +33,9 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
         padding: EdgeInsets.zero,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(30.r),
-            ),
+            borderRadius: BorderRadius.only(bottomRight: Radius.circular(30.r)),
             child: Stack(
               children: [
-
                 SizedBox(
                   height: 230.h,
                   child: PageView.builder(
@@ -65,23 +65,22 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                     child: Obx(() {
                       return Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(
-                          widget.food.imageUrl.length,
-                          (index) {
-                            return Container(
-                              margin: EdgeInsets.all(4.w),
-                              height: 10.h,
-                              width: 10.w,
-                              decoration: BoxDecoration(
-                                color:
-                                    controller.currentPage.value == index
-                                        ? kSecondary
-                                        : kGrayLight,
-                                shape: BoxShape.circle,
-                              ),
-                            );
-                          },
-                        ),
+                        children: List.generate(widget.food.imageUrl.length, (
+                          index,
+                        ) {
+                          return Container(
+                            margin: EdgeInsets.all(4.w),
+                            height: 10.h,
+                            width: 10.w,
+                            decoration: BoxDecoration(
+                              color:
+                                  controller.currentPage.value == index
+                                      ? kSecondary
+                                      : kGrayLight,
+                              shape: BoxShape.circle,
+                            ),
+                          );
+                        }),
                       );
                     }),
                   ),
@@ -107,7 +106,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                   right: 12.w,
                   child: CustomButton(
                     onTap: () {
-                      Get.to(() => RestaurantPage());
+                      Get.to(() => RestaurantPage(restaurant: hookResult.data));
                     },
                     btnWidth: 120.w,
                     radius: 25.r,
@@ -118,11 +117,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
             ),
           ),
 
-          Column(
-            children: [
-
-            ],
-          ),
+          Column(children: []),
         ],
       ),
     );
