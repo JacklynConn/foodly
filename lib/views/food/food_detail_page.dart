@@ -29,6 +29,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
   Widget build(BuildContext context) {
     final hookResult = useFetchRestaurant(widget.food.restaurant);
     final controller = Get.put(FoodsController());
+    print(widget.food.foodTags);
     return Scaffold(
       body: ListView(
         physics: NeverScrollableScrollPhysics(),
@@ -149,6 +150,46 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
 
                   SizedBox(height: 5.h),
 
+                  SizedBox(
+                    height: 15.h,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: List.generate(widget.food.foodTags.length, (
+                        index,
+                      ) {
+                        final tag = widget.food.foodTags[index];
+                        return Container(
+                          margin: EdgeInsets.only(right: 5.w),
+                          decoration: BoxDecoration(
+                            color: kPrimary,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(15.r),
+                            ),
+                          ),
+                          child: Center(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 6.w),
+                              child: ReusableText(
+                                text: tag,
+                                style: appStyle(
+                                  11,
+                                  kLightWhite,
+                                  FontWeight.w400,
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+
+                  SizedBox(height: 15.h),
+
+                  ReusableText(
+                    text: 'Additives and Toppings',
+                    style: appStyle(18, kDark, FontWeight.w600),
+                  ),
                 ],
               ),
             ),
