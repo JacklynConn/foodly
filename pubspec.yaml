@@ -13,13 +13,13 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   flutter_screenutil: ^5.9.3 # For responsive design
-  google_fonts: ^6.2.1 # For custom fonts
-  get: ^4.7.2 # For state management
+  google_fonts: ^6.3.2 # For custom fonts
+  get: ^4.7.3 # For state management
   flutter_vector_icons: ^2.0.0 # For vector icons
-  lottie: ^3.3.1 # For Lottie animations
+  lottie: ^3.3.2 # For Lottie animations
   flutter_rating_bar: ^4.0.1 # For rating bar
-  http: ^1.4.0 # For HTTP requests
-  flutter_hooks: ^0.21.2 # For hooks in Flutter
+  http: ^1.6.0 # For HTTP requests
+  flutter_hooks: ^0.21.3+1 # For hooks in Flutter
   shimmer: ^3.0.0 # For shimmer effect
   cached_network_image: ^3.4.1 # For caching network images
 
