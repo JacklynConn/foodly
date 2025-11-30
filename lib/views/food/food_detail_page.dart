@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:foodly/common/app_style.dart';
+import 'package:foodly/common/reusable_text.dart';
 import 'package:foodly/constants/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:foodly/hooks/fetch_restaurant.dart';
@@ -73,10 +75,9 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                             height: 10.h,
                             width: 10.w,
                             decoration: BoxDecoration(
-                              color:
-                                  controller.currentPage.value == index
-                                      ? kSecondary
-                                      : kGrayLight,
+                              color: controller.currentPage.value == index
+                                  ? kSecondary
+                                  : kGrayLight,
                               shape: BoxShape.circle,
                             ),
                           );
@@ -117,7 +118,41 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
             ),
           ),
 
-          Column(children: []),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: .start,
+                children: [
+                  SizedBox(height: 10.h),
+                  Row(
+                    mainAxisAlignment: .spaceBetween,
+                    children: [
+                      ReusableText(
+                        text: widget.food.title,
+                        style: appStyle(18, kDark, FontWeight.w600),
+                      ),
+                      ReusableText(
+                        text: "\$${widget.food.price.toStringAsFixed(2)}",
+                        style: appStyle(18, kPrimary, FontWeight.w600),
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(height: 5.h),
+                  Text(
+                    widget.food.description,
+                    textAlign: TextAlign.justify,
+                    maxLines: 8,
+                    style: appStyle(11, kGray, FontWeight.w400),
+                  ),
+
+                  SizedBox(height: 5.h),
+
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
