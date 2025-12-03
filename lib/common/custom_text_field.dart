@@ -12,7 +12,7 @@ class CustomTextFieldWidget extends StatelessWidget {
     this.obscureText,
     this.suffixIcon,
     this.validator,
-    this.prefixIcon, this.hintText, this.contentPadding,
+    this.prefixIcon, this.hintText, this.contentPadding, this.maxLines,
   });
 
   final TextInputType? keyboardType;
@@ -24,6 +24,7 @@ class CustomTextFieldWidget extends StatelessWidget {
   final String? Function(String?)? validator;
   final String? hintText;
   final EdgeInsetsGeometry? contentPadding;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +41,7 @@ class CustomTextFieldWidget extends StatelessWidget {
         onEditingComplete: onEditingComplete,
         obscureText: obscureText ?? false,
         cursorHeight: 20.h,
+        maxLines: maxLines ?? 1,
         style: appStyle(11, kDark, FontWeight.normal),
         validator: validator,
         decoration: InputDecoration(

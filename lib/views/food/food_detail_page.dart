@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:foodly/common/app_style.dart';
+import 'package:foodly/common/custom_text_field.dart';
 import 'package:foodly/common/reusable_text.dart';
 import 'package:foodly/constants/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -23,6 +24,8 @@ class FoodDetailPage extends StatefulHookWidget {
 }
 
 class _FoodDetailPageState extends State<FoodDetailPage> {
+  final TextEditingController _preferencesTextController =
+      TextEditingController();
   final PageController pageController = PageController();
 
   @override
@@ -30,98 +33,104 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
     final hookResult = useFetchRestaurant(widget.food.restaurant);
     final controller = Get.put(FoodsController());
 
-    return Scaffold(
-      body: ListView(
-        physics: NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.zero,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(bottomRight: Radius.circular(30.r)),
-            child: Stack(
-              children: [
-                SizedBox(
-                  height: 230.h,
-                  child: PageView.builder(
-                    controller: pageController,
-                    onPageChanged: (i) {
-                      controller.changPage(i);
-                    },
-                    itemCount: widget.food.imageUrl.length,
-                    itemBuilder: (context, i) {
-                      return Container(
-                        height: 230.h,
-                        width: width,
-                        color: kLightWhite,
-                        child: CachedNetworkImage(
-                          imageUrl: widget.food.imageUrl[i],
-                          fit: BoxFit.cover,
-                        ),
-                      );
-                    },
-                  ),
-                ),
-
-                Positioned(
-                  bottom: 10.h,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 12.0).w,
-                    child: Obx(() {
-                      return Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(widget.food.imageUrl.length, (
-                          index,
-                        ) {
-                          return Container(
-                            margin: EdgeInsets.all(4.w),
-                            height: 10.h,
-                            width: 10.w,
-                            decoration: BoxDecoration(
-                              color: controller.currentPage.value == index
-                                  ? kSecondary
-                                  : kGrayLight,
-                              shape: BoxShape.circle,
-                            ),
-                          );
-                        }),
-                      );
-                    }),
-                  ),
-                ),
-
-                Positioned(
-                  top: 40.h,
-                  left: 12.w,
-                  child: GestureDetector(
-                    onTap: () {
-                      Get.back();
-                    },
-                    child: Icon(
-                      Ionicons.chevron_back_circle,
-                      color: kPrimary,
-                      size: 30.sp,
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        body: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(30.r),
+              ),
+              child: Stack(
+                children: [
+                  SizedBox(
+                    height: 230.h,
+                    child: PageView.builder(
+                      controller: pageController,
+                      onPageChanged: (i) {
+                        controller.changPage(i);
+                      },
+                      itemCount: widget.food.imageUrl.length,
+                      itemBuilder: (context, i) {
+                        return Container(
+                          height: 230.h,
+                          width: width,
+                          color: kLightWhite,
+                          child: CachedNetworkImage(
+                            imageUrl: widget.food.imageUrl[i],
+                            fit: BoxFit.cover,
+                          ),
+                        );
+                      },
                     ),
                   ),
-                ),
 
-                Positioned(
-                  bottom: 10.h,
-                  right: 12.w,
-                  child: CustomButton(
-                    onTap: () {
-                      Get.to(() => RestaurantPage(restaurant: hookResult.data));
-                    },
-                    btnWidth: 120.w,
-                    radius: 25.r,
-                    text: 'Open Restaurant',
+                  Positioned(
+                    bottom: 10.h,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 12.0).w,
+                      child: Obx(() {
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: List.generate(widget.food.imageUrl.length, (
+                            index,
+                          ) {
+                            return Container(
+                              margin: EdgeInsets.all(4.w),
+                              height: 10.h,
+                              width: 10.w,
+                              decoration: BoxDecoration(
+                                color: controller.currentPage.value == index
+                                    ? kSecondary
+                                    : kGrayLight,
+                                shape: BoxShape.circle,
+                              ),
+                            );
+                          }),
+                        );
+                      }),
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ),
 
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.w),
-            child: SingleChildScrollView(
+                  Positioned(
+                    top: 40.h,
+                    left: 12.w,
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: Icon(
+                        Ionicons.chevron_back_circle,
+                        color: kPrimary,
+                        size: 30.sp,
+                      ),
+                    ),
+                  ),
+
+                  Positioned(
+                    bottom: 10.h,
+                    right: 12.w,
+                    child: CustomButton(
+                      onTap: () {
+                        Get.to(
+                          () => RestaurantPage(restaurant: hookResult.data),
+                        );
+                      },
+                      btnWidth: 120.w,
+                      radius: 25.r,
+                      text: 'Open Restaurant',
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
               child: Column(
                 crossAxisAlignment: .start,
                 children: [
@@ -273,13 +282,24 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                   SizedBox(height: 20.h),
                   ReusableText(
                     text: 'Preferences',
-                    style: appStyle(18, kDark, FontWeight.bold),
+                    style: appStyle(18, kDark, FontWeight.w600),
+                  ),
+
+                  SizedBox(height: 15.h),
+
+                  SizedBox(
+                    height: 65.h,
+                    child: CustomTextFieldWidget(
+                      controller: _preferencesTextController,
+                      hintText: 'Add a note with your preferences',
+                      maxLines: 3,
+                    ),
                   ),
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
