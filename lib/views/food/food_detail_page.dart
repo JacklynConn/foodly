@@ -34,6 +34,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
   Widget build(BuildContext context) {
     final hookResult = useFetchRestaurant(widget.food.restaurant);
     final controller = Get.put(FoodsController());
+    controller.loadAdditives(widget.food.additives);
 
     return Scaffold(
       body: ListView(
@@ -192,37 +193,40 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                 ),
 
                 SizedBox(height: 10.h),
-                Column(
-                  children: List.generate(widget.food.additives.length, (
-                    index,
-                  ) {
-                    final additive = widget.food.additives[index];
-                    return CheckboxListTile(
-                      contentPadding: EdgeInsets.zero,
-                      dense: true, // Reduces height of ListTile
-                      value: true,
-                      visualDensity:
-                          VisualDensity.compact, // Further reduces height
-                      activeColor: kPrimary,
-                      tristate: false, // Only two states: checked and unchecked
-                      title: Row(
-                        mainAxisAlignment: .spaceBetween,
-                        children: [
-                          ReusableText(
-                            text: additive.title,
-                            style: appStyle(11, kDark, FontWeight.w400),
-                          ),
-                          SizedBox(width: 10.w),
-                          ReusableText(
-                            text: "+\$${additive.price}",
-                            style: appStyle(11, kPrimary, FontWeight.w600),
-                          ),
-                        ],
-                      ),
-                      onChanged: (bool? value) {},
-                    );
-                  }),
-                ),
+                Obx(() {
+                  return Column(
+                    children: List.generate(controller.additiveList.length, (
+                      index,
+                    ) {
+                      final additive = widget.food.additives[index];
+                      return CheckboxListTile(
+                        contentPadding: EdgeInsets.zero,
+                        dense: true, // Reduces height of ListTile
+                        value: true,
+                        visualDensity:
+                            VisualDensity.compact, // Further reduces height
+                        activeColor: kSecondary,
+                        tristate:
+                            false, // Only two states: checked and unchecked
+                        title: Row(
+                          mainAxisAlignment: .spaceBetween,
+                          children: [
+                            ReusableText(
+                              text: additive.title,
+                              style: appStyle(11, kDark, FontWeight.w400),
+                            ),
+                            SizedBox(width: 10.w),
+                            ReusableText(
+                              text: "+\$${additive.price}",
+                              style: appStyle(11, kPrimary, FontWeight.w600),
+                            ),
+                          ],
+                        ),
+                        onChanged: (bool? value) {},
+                      );
+                    }),
+                  );
+                }),
 
                 SizedBox(height: 20.h),
 
