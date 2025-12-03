@@ -14,6 +14,8 @@ import '../../controllers/foods_controller.dart';
 import '../../models/food_model.dart';
 import 'package:get/get.dart';
 
+import '../auth/phone_verification_page.dart';
+
 class FoodDetailPage extends StatefulHookWidget {
   const FoodDetailPage({super.key, required this.food});
 
@@ -382,9 +384,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
 
                 CustomButton(
                   onTap: () {
-                    Get.to(() => PhoneVerificationPage(
-                      
-                    ));
+                    Get.to(() => PhoneVerificationPage());
                   },
                   text: 'Verify Phone Number',
                   btnWidth: 200.w,

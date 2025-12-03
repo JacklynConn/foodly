@@ -22,6 +22,7 @@ dependencies:
   flutter_hooks: ^0.21.3+1 # For hooks in Flutter
   shimmer: ^3.0.0 # For shimmer effect
   cached_network_image: ^3.4.1 # For caching network images
+  phone_otp_verification: ^1.0.3 # For phone OTP verification
 
 dev_dependencies:
   flutter_test:
