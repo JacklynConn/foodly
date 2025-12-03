@@ -40,4 +40,17 @@ class FoodsController extends GetxController {
       }
     }
   }
+
+  List<String> getList() {
+    List<String> ads = [];
+
+    for (var additive in additiveList) {
+      if (additive.isChecked.value && !ads.contains(additive.title)) {
+        ads.add(additive.title);
+      }else if(!additive.isChecked.value && ads.contains(additive.title)){
+        ads.remove(additive.title);
+      }
+    }
+    return ads;
+  }
 }

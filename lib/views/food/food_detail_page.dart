@@ -198,11 +198,11 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                     children: List.generate(controller.additiveList.length, (
                       index,
                     ) {
-                      final additive = widget.food.additives[index];
+                      final additive = controller.additiveList[index];
                       return CheckboxListTile(
                         contentPadding: EdgeInsets.zero,
                         dense: true, // Reduces height of ListTile
-                        value: true,
+                        value: additive.isChecked.value,
                         visualDensity:
                             VisualDensity.compact, // Further reduces height
                         activeColor: kSecondary,
@@ -222,7 +222,9 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                             ),
                           ],
                         ),
-                        onChanged: (bool? value) {},
+                        onChanged: (bool? value) {
+                          additive.toggleChecked();
+                        },
                       );
                     }),
                   );
