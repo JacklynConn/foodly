@@ -133,10 +133,13 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                         text: widget.food.title,
                         style: appStyle(18, kDark, FontWeight.w600),
                       ),
-                      ReusableText(
-                        text: "\$${widget.food.price.toStringAsFixed(2)}",
-                        style: appStyle(18, kPrimary, FontWeight.w600),
-                      ),
+                      Obx(() {
+                        return ReusableText(
+                          text:
+                              "\$${(widget.food.price * controller.count.value).toStringAsFixed(2)}",
+                          style: appStyle(18, kPrimary, FontWeight.w600),
+                        );
+                      }),
                     ],
                   ),
 
@@ -232,13 +235,15 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                     children: [
                       ReusableText(
                         text: 'Quantity:',
-                        style: appStyle(11, kDark, FontWeight.w400),
+                        style: appStyle(18, kDark, FontWeight.bold),
                       ),
                       SizedBox(width: 10.w),
                       Row(
                         children: [
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              controller.decrement();
+                            },
                             child: Icon(AntDesign.minuscircleo, size: 20.sp),
                           ),
 
@@ -246,19 +251,29 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                             padding: const EdgeInsets.symmetric(
                               horizontal: 8.0,
                             ).w,
-                            child: ReusableText(
-                              text: '0',
-                              style: appStyle(12, kDark, FontWeight.w600),
-                            ),
+                            child: Obx(() {
+                              return ReusableText(
+                                text: '${controller.count.value}',
+                                style: appStyle(14, kDark, FontWeight.w600),
+                              );
+                            }),
                           ),
 
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              controller.increment();
+                            },
                             child: Icon(AntDesign.pluscircleo, size: 20.sp),
                           ),
                         ],
                       ),
                     ],
+                  ),
+
+                  SizedBox(height: 20.h),
+                  ReusableText(
+                    text: 'Preferences',
+                    style: appStyle(18, kDark, FontWeight.bold),
                   ),
                 ],
               ),
