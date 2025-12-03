@@ -47,10 +47,30 @@ class FoodsController extends GetxController {
     for (var additive in additiveList) {
       if (additive.isChecked.value && !ads.contains(additive.title)) {
         ads.add(additive.title);
-      }else if(!additive.isChecked.value && ads.contains(additive.title)){
+      } else if (!additive.isChecked.value && ads.contains(additive.title)) {
         ads.remove(additive.title);
       }
     }
     return ads;
+  }
+
+  final RxDouble _totalPrice = 0.0.obs;
+  double get additivePrice => _totalPrice.value;
+
+  set setTotalPrice(double newPrice) {
+    _totalPrice.value = newPrice;
+  }
+
+  double getTotalPrice() {
+    double totalPrice = 0.0;
+
+    for (var additive in additiveList) {
+      if (additive.isChecked.value) {
+        totalPrice += double.tryParse(additive.price) ?? 0.0;
+      }
+    }
+    setTotalPrice = totalPrice;
+    print('Total Additive Price: $additivePrice');
+    return totalPrice;
   }
 }

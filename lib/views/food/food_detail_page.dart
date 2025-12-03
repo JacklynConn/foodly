@@ -140,7 +140,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                     Obx(() {
                       return ReusableText(
                         text:
-                            "\$${(widget.food.price * controller.count.value).toStringAsFixed(2)}",
+                            "\$${((widget.food.price + controller.additivePrice) * controller.count.value).toStringAsFixed(2)}",
                         style: appStyle(18, kPrimary, FontWeight.w600),
                       );
                     }),
@@ -224,6 +224,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                         ),
                         onChanged: (bool? value) {
                           additive.toggleChecked();
+                          controller.getTotalPrice();
                         },
                       );
                     }),
