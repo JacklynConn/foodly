@@ -295,12 +295,87 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                       maxLines: 3,
                     ),
                   ),
+
+                  SizedBox(height: 15.h),
+
+                  Container(
+                    height: 40.h,
+                    decoration: BoxDecoration(
+                      color: kPrimary,
+                      borderRadius: BorderRadius.all(Radius.circular(30.r)),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: .spaceBetween,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            showVerificationSheet(context);
+                          },
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 12.0.w),
+                            child: ReusableText(
+                              text: 'Place Order',
+                              style: appStyle(18, kLightWhite, FontWeight.w600),
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: CircleAvatar(
+                            radius: 20.r,
+                            backgroundColor: kSecondary,
+                            child: Icon(
+                              Ionicons.cart,
+                              color: kLightWhite,
+                              size: 20.sp,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Future<dynamic> showVerificationSheet(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          height: 500.h,
+          padding: EdgeInsets.all(12.0.w),
+          child: Column(
+            crossAxisAlignment: .start,
+            children: [
+              ReusableText(
+                text: 'Order Placed!',
+                style: appStyle(18, kDark, FontWeight.w600),
+              ),
+              SizedBox(height: 10.h),
+              ReusableText(
+                text:
+                    'Your order has been placed successfully. You will receive a confirmation email shortly.',
+                style: appStyle(11, kGray, FontWeight.w400),
+              ),
+              SizedBox(height: 20.h),
+              CustomButton(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                btnWidth: width,
+                radius: 25.r,
+                text: 'Close',
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
