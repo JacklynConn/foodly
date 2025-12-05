@@ -3,17 +3,15 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodly/common/custom_button.dart';
 import 'package:foodly/constants/constants.dart';
+import 'package:foodly/models/restaurants_model.dart';
 import 'package:foodly/views/restaurant/rating_page.dart';
 import 'package:foodly/views/restaurant/restaurant_page.dart';
 import 'package:get/get.dart';
 
 class RestaurantBottomBar extends StatelessWidget {
-  const RestaurantBottomBar({
-    super.key,
-    required this.widget,
-  });
+  const RestaurantBottomBar({super.key, required this.restaurant});
 
-  final RestaurantPage widget;
+  final RestaurantsModel? restaurant;
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +33,11 @@ class RestaurantBottomBar extends StatelessWidget {
             itemCount: 5,
             itemSize: 20.h,
             direction: Axis.horizontal,
-            rating: widget.restaurant!.rating.toDouble(),
+            rating: restaurant!.rating.toDouble(),
             itemBuilder: (context, index) =>
                 const Icon(Icons.star, color: Colors.yellow),
           ),
-    
+
           CustomButton(
             onTap: () {
               Get.to(() => const RatingPage());
